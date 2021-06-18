@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container-fluid" style="position:relative">
+    <br>
+    <h4 >Exploratory Data Analysis (EDA) Results   <a class="h6 rounded p-1 bg-info text-white" href="{{url_for('download_webpage') }}">download</a></h4>
+    <br>
+    <div class="row">
+        <div class="col-lg-8 col-md-6 col-12">
+            <div class="cards" style=" padding-top:20px;">
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top" src="{{url_for('static', filename='images/ChurnCount.png')}}"
+                        width="300px" height="300px" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bar Chart displaying Customers who churned vs Customers who didn't
+                            churn
+                        </h5>
+                        <p class="card-text">Majority of customers choose to keep using the service, while more
+                            than
+                            26% of customers have actually churned. A churn rate of below 5% usually means that the
+                            company is doing okay.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="cards" style="padding-top:20px">
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top" src="{{url_for('static', filename='images/ChurnByTenure.png')}}"
+                        width="300px" height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">What's the distribution of customers based on Tenure?</h5>
+                        <p class="card-text">More than 800 customers have a lower tenure period (less than 10
+                            months)
+                            followed by customers
+                            with tenure close to 70 months. Majority of Customers have a Tenure between 10 months to
+                            65 months.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="row">
+        
+
+        <div class="col-lg-8 col-md-6 col-12">
+            <div class="cards" style=" padding-top: 20px;">
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top"
+                        src="{{url_for('static', filename='images/ChurnVsMultipleCharges.png')}}" width="300px"
+                        height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Are customers choosing to stay or leave based on Monthly charges?
+                        </h5>
+                        <p class="card-text">A high number of customers prefer to stay if the monthly charges are
+                            less. Also more customers leave the service if the charges are between $70 and $100.
+                            Strategic pricing can help the company in this regard.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="cards" style=" padding-top: 20px;">
+                <div class="card" style="width: 25rem;">
+                    <img style="padding:10px" class="card-img-top"
+                        src="{{url_for('static', filename='images/countSeniorCitizen.png')}}" width="300px"
+                        height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Does Seniority affect churn in any way?</h5>
+                        <p class="card-text">While the number of customers who are Senior Citizens is quite less, we
+                            found that Senior Citizens are much more likely to churn away from the service as
+                            compared to their counterparts.
+
+                            Reasons could be not finding the service useful, lack of better offers for the
+                            particular
+                            customer segment and lack of support from company's end.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" style="padding-top:20px">
+
+        
+
+        <div class="col-lg-8 col-md-6 col-12">
+            <div class="cards" style="padding-top: 20px;">
+                <div class="card" style="width: 25rem;">
+                    <img style="padding:10px" class="card-img-top"
+                        src="{{url_for('static', filename='images/DependentsPieChart.png')}}" width="300px"
+                        height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Do most customers have dependents?</h5>
+                        <p class="card-text">Very few customers who use the service have dependents while majority
+                            of customers don't have any dependents.
+                            Company can take advantage of this information by targeting their services towards such
+                            individuals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="cards" style="padding-top: 20px;">
+                <div class="card" style="width: 25rem;">
+                    <img style="padding:10px" class="card-img-top"
+                        src="{{url_for('static', filename='images/DistributionOfChargesBasedOnChurn.png')}}"
+                        width="300px" height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">How are customers distributed based on Total Charges?</h5>
+                        <p class="card-text">We found that majority of customers have total charges in the range of
+                            $0 to $2000. Among them, there is a high chance that the customer will churn and leave
+                            the service. Customers with total charges more than $4000 are much less likely to churn.
+                            Company needs to improve its low budget offerings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:20px">
+
+        <div class="col-lg-8 col-md-6 col-12">
+            <div class="cards" style="padding-top: 20px;">
+                <div class="card" style="width: 25rem;">
+                    <img style="padding:10px" class="card-img-top"
+                        src="{{url_for('static', filename='images/ChurnVsTenureAxisPlot.png')}}" width="300px"
+                        height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Does long tenure helps the company in retaining more customers?</h5>
+                        <p class="card-text">Customers with more
+                            tenure tend to churn less as compared to customers
+                            with less tenure. The company should try to increase customer tenure by
+                            using better offers and services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="cards" style="padding-top:20px">
+                <div class="card" style="width: 25rem;">
+                    <img style="padding:10px" class="card-img-top"
+                        src="{{url_for('static', filename='images/PartnerPieChart.png')}}" width="300px"
+                        height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Distribution of data based on whether a person has a
+                            partner or
+                            not?</h5>
+                        <p class="card-text">The distribution is slightly high for customers without a partner.
+                            While the difference is not much we suggest that the company should focus on
+                            both of these segments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="cards" style="padding-top:20px">
+                <div class="card" style="width: 25rem;">
+                    <img style="padding:10px" class="card-img-top"
+                        src="{{url_for('static', filename='images/PercentDifferentPlans.png')}}" width="300px"
+                        height="300px" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Percentage of different plans bought among Monthly, One Year and Two
+                            Year</h5>
+                        <p class="card-text">We found that most customers prefer Monthly plans as compared to One
+                            Year and Two Year plans.
+                            Using this analysis we can conclude that the company should focus more providing the
+                            best packages for Monthly users.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- {% endblock content %} -->
